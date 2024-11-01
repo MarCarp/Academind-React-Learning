@@ -1,3 +1,4 @@
+import React from 'react';
 import reactImg from '../../assets/react-core-concepts.png';
 import './Header.css';
 
@@ -9,7 +10,7 @@ function genRandomInt(max) {
 
 export default function Header() {
     const description = reactDescriptions[genRandomInt(2)];
-    return (
+    /*return (
         <header>
             <img src={reactImg} alt="Stylized atom" />
             <h1>React Essentials</h1>
@@ -18,5 +19,27 @@ export default function Header() {
             going to build!
             </p>
         </header>
-    );
+    );*/
+    return React.createElement(
+        'header',
+        null,
+        React.createElement(
+            'img',
+            {
+                src: reactImg,
+                alt: 'Stylized atom'
+            }
+        ),
+        React.createElement(
+            'h1',
+            null,
+            'React Essentials'
+        ),
+        React.createElement(
+            'p',
+            null,
+            description,
+            ' React concepts you will need for almost any app you are going to build!'
+        )
+    )
 }
